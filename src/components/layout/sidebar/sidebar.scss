@@ -1,0 +1,39 @@
+.sidebar {
+	width: 206px;
+	padding-left: 60px;
+	padding-right: 55px;
+	border: 1px solid red;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	.app-logo {
+		margin-bottom: 60px;
+	}
+	.menu {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+    &__wrap {
+      &:hover {
+        svg {
+          path {
+            fill: #615DFA;
+          }
+        }
+        .menu__item {
+          color: #615DFA;
+        }
+      }
+    }
+		&__item {
+			padding: 30px 0;
+			color: #8c8cb6;
+			font-size: 16px;
+			font-weight: 700;
+			line-height: 60px;
+			letter-spacing: -0.41px;
+		}
+	}
+}

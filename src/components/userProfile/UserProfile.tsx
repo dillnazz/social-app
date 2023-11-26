@@ -8,7 +8,7 @@ const UserProfile = () => {
       <div className="profile">
       <img src={ProfilePhoto} alt="" />
       </div>
-      <div className="profilCircle">
+      <div className="profileCircle">
         <div className="circle">
 
         </div>
@@ -17,7 +17,7 @@ const UserProfile = () => {
         <h4>Екатерина Варнава</h4>
       </div>
       <div className="empty">
-        
+
       </div>
     </div>
   )

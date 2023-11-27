@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom"
 import SideBar from "./sidebar/SideBar"
 import "./layout.scss"
+import AppHeader from "../appHeader/AppHeader"
 
 const Layout: React.FC = () => {
   return (
@@ -9,7 +10,7 @@ const Layout: React.FC = () => {
         <SideBar />
       </div>
       <div>
-        Header
+        <AppHeader/>
         <Outlet />
       </div>
     </div>

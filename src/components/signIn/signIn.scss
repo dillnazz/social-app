@@ -1,67 +1,71 @@
 .signIn {
-  // position: relative;
-
-  .signInBtn {
-    width: 53px;
-height: 34px;
-color: #4E3F6F;
-text-align: right;
-font-size: 16px;
-font-style: normal;
-font-weight: 700;
-border: none;
-background: #F2F2FE;
-  }
-
-  .form-container {
-    border-radius: 50px;
-    position: absolute;
-    top: 4px;
-    z-index: 5;
-    height: 1000px;
-    width: 585px;
-    right: 12px;
-    background-color: white;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  input {
-    border-radius: 20px;
-background: #F2F2FE;
-width: 170px;
-height: 68px;
-margin: 40px;
-border: none;
-padding-left: 20px;
-  }
-  p {
-    color: #4E3F6F;
-    text-align: center;
-
-font-family: Nunito;
-font-size: 16px;
-font-style: normal;
-font-weight: 700;
-line-height: 22px; /* 137.5% */
-  }
+	.signInBtn {
+		width: 53px;
+		height: 34px;
+		color: #4e3f6f;
+		text-align: right;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 700;
+		border: none;
+		background: #f2f2fe;
+	}
+	.form-container {
+		border-radius: 50px;
+		border: 1px solid red;
+		position: absolute;
+		z-index: 5;
+		height: 100vh;
+		width: 585px;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		background-color: white;
+		padding: 10px;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		.textPassword {
+			color: #4e3f6f;
+			font-size: 16px;
+			font-weight: 700;
+		}
+	}
+	input {
+		border-radius: 20px;
+		background: #f2f2fe;
+		width: 170px;
+		height: 68px;
+		margin: 40px;
+		border: none;
+		padding-left: 20px;
+	}
+	p {
+		color: #4e3f6f;
+		font-family: Nunito;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 700;
+    padding-left: 60px;
+    padding-top: 20px;
+	}
 }
 .formText {
-  text-align: center;
-  color: #4E3F6F;
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 700;
+  padding-left: 60px;
+	color: #4e3f6f;
+	font-size: 36px;
+	font-style: normal;
+	font-weight: 700;
 }
 .continueBtn {
-  width: 158px;
-height: 58px;
-color: #FFF;
-background-color: #615DFA;
-text-align: center;
-font-size: 16px;
-font-style: normal;
-font-weight: 700;
-border-radius: 20px;
-margin-left: 35px;
+	width: 158px;
+	height: 58px;
+	color: #fff;
+	background-color: #615dfa;
+	border: 0;
+	text-align: center;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	border-radius: 20px;
+	margin-left: 35px;
 }

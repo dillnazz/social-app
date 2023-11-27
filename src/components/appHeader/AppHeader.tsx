@@ -1,15 +1,14 @@
-import Button from "../UI/button/Button"
-import Input from "../UI/input/Input"
-import UserProfile from "../userProfile/UserProfile"
-import "./appHeader.scss";
 import SignIn from "../../components/signIn/SignIn";
+import Input from "../UI/input/Input";
+import UserProfile from "../userProfile/UserProfile";
+import "./appHeader.scss";
 
 const AppHeader = () => {
   return (
     <div className="header">
       <Input />
-      <UserProfile/>
-        <SignIn/>
+      <UserProfile />
+      <SignIn />
     </div>
   )
 }

@@ -7,8 +7,10 @@ const AppHeader = () => {
   return (
     <div className="header">
       <Input />
-      <UserProfile />
-      <SignIn />
+      <div className="userAction">
+        <UserProfile />
+        <SignIn />
+      </div>
     </div>
   )
 }

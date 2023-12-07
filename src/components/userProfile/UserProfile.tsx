@@ -1,6 +1,6 @@
 
 import './userProfile.scss';
-import ProfilePhoto from "../../assets/images/Photo.svg";
+import ProfilePhoto from "../../assets/svg/Photo.svg";
 
 const UserProfile = () => {
   return (

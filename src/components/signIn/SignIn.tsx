@@ -1,15 +1,17 @@
 import { CloseOutlined } from "@ant-design/icons";
 import "./signIn.scss"
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import InputField from "../UI/input-field/InputField";
+import AntSelect from "../UI/select/AntSelect";
 
 const ShowTimer = () => {
   const [secund, setSecund] = useState<number>(59)
-  let intervalId: number = 0
+
+  let intervalId: ReturnType<typeof setTimeout>;
 
   useEffect(() => {
     intervalId = setInterval(() => {
-      setSecund((state) => state -= 1)
+      setSecund((state) => state - 1)
     }, 1000)
 
     if (secund < 1) {
@@ -27,6 +29,8 @@ const ShowTimer = () => {
 const SignIn: React.FC = () => {
   const [isFormVisible, setFormVisibility] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
+  const [phoneNumber, setPhoneNumber] = useState<string>("")
+
 
   const handleButtonClick = () => {
     setFormVisibility(true);
@@ -34,6 +38,8 @@ const SignIn: React.FC = () => {
   const handleContinueClick = () => {
     setCurrentStep(currentStep + 1);
   };
+
+  const handleSendOTP = () => { }
 
   return (
     <div className="signIn">
@@ -55,19 +61,28 @@ const SignIn: React.FC = () => {
             <p>Выберите код страны и введите номер телефона</p>
             <form>
               <label className="input-phone-code">
-                <InputField type={'text'} hint={'+996'} />
+                <AntSelect />
               </label>
               <label className="input-phone">
-                <InputField type={'text'} hint={'phone number'} />
+                <InputField
+                  onChange={(value) => {
+                    console.log(value)
+                    setPhoneNumber(value)
+                  }}
+                  type={'tel'} hint={'phone number'} />
               </label>
               {currentStep === 1 && (
-                <button className="continueBtn" type="button" onClick={handleContinueClick}>Далее</button>
+                <button className="continueBtn" type="button"
+                  onClick={handleContinueClick}>Далее</button>
               )}
               {currentStep === 2 && (
                 <>
                   <label>
                     <p className="textPassword">Введите 4-х значный код из смс</p>
-                    <InputField type={'text'} hint={'4565'} />
+                    <InputField onChange={(value) => {
+                      console.log(value)
+                      setPhoneNumber(value)
+                    }} type={'text'} hint={'4565'} />
                   </label>
                   <button className="continueBtn" type="button">Войти</button>
                 </>

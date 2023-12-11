@@ -1,5 +1,8 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+
+
+
 const firebaseConfig = {
   apiKey: "AIzaSyCOq4PJo_nv1Wy6u1INFMyhipg2v4DLObQ",
   authDomain: "autorization-b4b58.firebaseapp.com",
@@ -12,3 +15,5 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+auth.languageCode = 'it';
+

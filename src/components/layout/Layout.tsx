@@ -9,7 +9,7 @@ const Layout: React.FC = () => {
       <div>
         <SideBar />
       </div>
-      <div>
+      <div className="grow">
         <AppHeader/>
         <Outlet />
       </div>

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import InputField from "../UI/input-field/InputField";
 
 const ShowTimer = () => {
-  const [secund, setSecund] = useState<number>(5)
+  const [secund, setSecund] = useState<number>(59)
   let intervalId: number = 0
 
   useEffect(() => {

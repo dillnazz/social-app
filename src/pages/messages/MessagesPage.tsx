@@ -1,4 +1,3 @@
-import Input from "../../components/UI/input/Input";
 import "./messages.scss";
 import axios from 'axios';
 import { useEffect, useState } from 'react';
@@ -13,8 +12,6 @@ interface User {
   userCost: number,
   id: string
 }
-
-
 
 const UserData: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]);
@@ -33,28 +30,31 @@ const UserData: React.FC = () => {
   }, []);
 
   if (users.length === 0) {
-    return <Spin size="large" />
+    return <Spin size="large" />;
   }
 
   return (
     <>
-      <div> <Title>Рекомендуем </Title></div>
+      <div>
+        <Title>Рекомендуем </Title>
+      </div>
       <div className='usersMessage'>
         <div className="chat">
-        <div className="chatContact">
-        <div className="chatBtns">
-          <button>Выбрать</button>
-          <button>Архивировать</button>
-          <button>Удалить</button>
+          <div className="chatContact">
+            <div className="chatBtns">
+              <button>Выбрать</button>
+              <button>Архивировать</button>
+              <button>Удалить</button>
+            </div>
+          </div>
         </div>
-        </div>
-
-        <div className="chatMessage">
-          meassages
-        </div>
-        </div>
+      </div>
+      <div className="chatMessage">
+        messages
+      </div>
+      <div>
         {users.map(user => (
-          <MessagesPage user={user} />
+          <MessagesPage key={user.id} user={user} />
         ))}
       </div>
     </>
@@ -66,25 +66,23 @@ interface UserCardProps {
 }
 
 const MessagesPage: React.FC<UserCardProps> = ({ user }) => {
-
   return (
     <div className="messageHeader">
-          <div style={{
-            backgroundImage: `url(${user.userAvatar})`,
-            height: 81,
-            width:71,
-            borderRadius: 15,
-            backgroundPosition: 'center center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat'
-          }}>
-          </div>
-          <div className="userInfo">
-          <h4>{user.userName}</h4>
-
-          </div>
+      <div style={{
+        backgroundImage: `url(${user.userAvatar})`,
+        height: 81,
+        width: 71,
+        borderRadius: 15,
+        backgroundPosition: 'center center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat'
+      }}>
+      </div>
+      <div className="userInfo">
+        <h4>{user.userName}</h4>
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default UserData;

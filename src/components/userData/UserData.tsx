@@ -66,7 +66,6 @@ const UserCard: React.FC<UserCardProps> = ({ user }) => {
       }}>
 <div className='cost'>10$</div>
       </div>
-      {/* <img style={{ width: '241px', height:"263px"}} src={user.userAvatar} alt="" /> */}
       <h1>{user.userName}</h1>
       <p>{user.userInfo.length > 45 ? user.userInfo.slice(0, 45) + "..." : user.userInfo } </p>
       <div className="contact">

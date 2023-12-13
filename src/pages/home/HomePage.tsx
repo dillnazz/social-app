@@ -1,12 +1,12 @@
 import Category from "../../components/category/Category"
-import UserData from "../../components/userData/UserData"
+import UserData from "../messages/MessagesPage"
 
 
 const HomePage: React.FC = () => {
   return (
     <div>
       <Category />
-      <UserData />
+      <UserData/>
     </div>
   )
 }

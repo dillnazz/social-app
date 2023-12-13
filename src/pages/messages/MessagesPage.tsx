@@ -29,6 +29,11 @@ const UserData: React.FC = () => {
     fetchData();
   }, []);
 
+  const handleUserClick = (user: User) => {
+    // Handle user click, e.g., show messages related to the user
+    console.log(`User clicked: ${user.userName}`);
+  };
+
   if (users.length === 0) {
     return <Spin size="large" />;
   }
@@ -36,9 +41,9 @@ const UserData: React.FC = () => {
   return (
     <>
       <div>
-        <Title>Рекомендуем </Title>
+        <Title>Рекомендуем</Title>
       </div>
-      <div className='usersMessage'>
+      <div className="usersMessage">
         <div className="chat">
           <div className="chatContact">
             <div className="chatBtns">
@@ -46,16 +51,18 @@ const UserData: React.FC = () => {
               <button>Архивировать</button>
               <button>Удалить</button>
             </div>
+            <div>
+              {users.map(user => (
+                <div key={user.id} onClick={() => handleUserClick(user)}>
+                  <MessagesPage user={user} />
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="chatMessage">
+            messages
           </div>
         </div>
-      </div>
-      <div className="chatMessage">
-        messages
-      </div>
-      <div>
-        {users.map(user => (
-          <MessagesPage key={user.id} user={user} />
-        ))}
       </div>
     </>
   );
@@ -84,5 +91,6 @@ const MessagesPage: React.FC<UserCardProps> = ({ user }) => {
     </div>
   );
 };
+
 
 export default UserData;

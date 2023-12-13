@@ -60,6 +60,7 @@ const SignIn: React.FC = () => {
             <h2 className="formText">Авторизация</h2>
             <p>Выберите код страны и введите номер телефона</p>
             <form>
+              <div style={{display:'flex'}} className="phoneCode">
               <label className="input-phone-code">
                 <AntSelect />
               </label>
@@ -71,6 +72,7 @@ const SignIn: React.FC = () => {
                   }}
                   type={'tel'} hint={'phone number'} />
               </label>
+              </div>
               {currentStep === 1 && (
                 <button className="continueBtn" type="button"
                   onClick={handleContinueClick}>Далее</button>

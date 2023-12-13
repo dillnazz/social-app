@@ -12,7 +12,7 @@ const AntSelect = () => {
       <Select
         labelInValue
         defaultValue={{ value: '+996', label: '(Кыргызстан)' }}
-        style={{ width: 120 }}
+        style={{ width: 120}}
         onChange={handleChange}
         options={[
           {

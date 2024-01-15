@@ -12,7 +12,7 @@ export const sidebarMenu: IMenuType[] = [
 	{
 		title: "Главная",
 		icon: HomeIcon,
-		path: "/home",
+		path: "/",
 	},
 	{
 		title: "Сообщения",

@@ -1,0 +1,99 @@
+.recomUsers {
+	width: 271px;
+	height: 430px;
+	border-radius: 20px;
+	background: #fff;
+	display: flex;
+	flex-direction: column;
+	padding: 15px;
+	&:hover {
+		height: 600px;
+		.contact {
+			display: block;
+		}
+	}
+	h4 {
+		display: flex;
+		width: 210px;
+		height: 16px;
+		flex-direction: column;
+		justify-content: center;
+		flex-shrink: 0;
+		color: #4e3f6f;
+		font-family: Nunito;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 700;
+		padding-top: 29px;
+	}
+	p {
+		color: #8c8cb6;
+		font-size: 14px;
+		padding-top: 12px;
+		padding-right: 30px;
+	}
+	.contact {
+		display: none;
+		.socialLinks {
+			display: flex;
+			gap: 18px;
+			padding-top: 27px;
+			align-items: center;
+      margin-bottom: 27px;
+			.socialSvgs {
+				.images {
+					display: flex;
+					gap: 10px;
+					img {
+						width: 24px;
+						height: 24px;
+					}
+				}
+			}
+		}
+		.emptyDiv {
+			width: 3px;
+			height: 20px;
+			flex-shrink: 0;
+			border-radius: 10px;
+			background: #e1e2eb;
+		}
+		p {
+			display: flex;
+			width: 178px;
+			height: 35px;
+			flex-direction: column;
+			justify-content: center;
+			color: #4e3f6f;
+			font-family: Nunito;
+			font-size: 16px;
+			font-weight: 700;
+			text-transform: uppercase;
+			padding-bottom: 10px;
+		}
+		.followers {
+			display: flex;
+      h2 {
+        color: #4E3F6F;
+      }
+			p {
+				margin-left: 15px;
+				color: #8c8cb6;
+				font-family: Nunito;
+				font-size: 11px;
+				font-style: normal;
+				color: #8c8cb6;
+			}
+		}
+    .contactBtn {
+      border-radius: 20px;
+      background: #615dfa;
+      width: 186px;
+      height: 58px;
+      flex-shrink: 0;
+      border-color: transparent;
+      margin-top: 35px;
+      color: white;
+    }
+	}
+}

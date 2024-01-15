@@ -3,24 +3,25 @@ import "./signIn.scss"
 import { useEffect, useState } from 'react';
 import InputField from "../UI/input-field/InputField";
 import AntSelect from "../UI/select/AntSelect";
+
 const ShowTimer = () => {
-  const [second, setSecond] = useState<number>(5)
+  const [secund, setSecund] = useState<number>(59)
 
   let intervalId: ReturnType<typeof setTimeout>;
 
   useEffect(() => {
     intervalId = setInterval(() => {
-      setSecond((state) => state - 1)
+      setSecund((state) => state - 1)
     }, 1000)
 
-    if (second < 1) {
+    if (secund < 1) {
       console.log("stop");
       clearInterval(intervalId)
     }
     return () => clearInterval(intervalId)
-  }, [second])
+  }, [secund])
 
-  if (second > 0) return <span>Повторная отправка возможна через {second} секунд.</span>
+  if (secund > 0) return <span>Повторная отправка возможна через {secund} секунд.</span>
 
   return <span>Повторная отправка возможна через 0 секунд.</span>
 }
@@ -59,8 +60,9 @@ const SignIn: React.FC = () => {
             <h2 className="formText">Авторизация</h2>
             <p>Выберите код страны и введите номер телефона</p>
             <form>
+              <div style={{display:'flex', justifyContent:'space-between'}} className="phoneCode">
               <label className="input-phone-code">
-                <AntSelect />
+                <AntSelect/>
               </label>
               <label className="input-phone">
                 <InputField
@@ -70,6 +72,7 @@ const SignIn: React.FC = () => {
                   }}
                   type={'tel'} hint={'phone number'} />
               </label>
+              </div>
               {currentStep === 1 && (
                 <button className="continueBtn" type="button"
                   onClick={handleContinueClick}>Далее</button>

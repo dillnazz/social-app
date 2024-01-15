@@ -9,6 +9,7 @@ const AppRoutes: React.FC = () => {
         <Route path="/" element={<Layout />} >
           {routes.map(({ path, element }) => <Route key={path} path={path} element={element} />)}
         </Route>
+        
       </Routes>
     </BrowserRouter>
   )

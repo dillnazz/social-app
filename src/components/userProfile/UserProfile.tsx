@@ -13,7 +13,7 @@ const UserProfile = () => {
         </div>
       </div>
       <div className='profileName'>
-        <h4>Екатерина Варнава</h4>
+        <h4>Dilnaz Niazovna</h4>
       </div>
       <div className="empty">
       </div>

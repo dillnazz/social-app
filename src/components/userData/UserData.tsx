@@ -1,16 +1,22 @@
-import "./messages.scss";
+import "./userData.scss";
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Title from '../../components/title/Title';
 import { Spin } from 'antd';
+import Vector from '../../assets/svg/Vector.svg';
+import Vector1 from "../../assets/svg/Vector (1).svg";
+import Vector2 from "../../assets/svg/Vector (2).svg";
+import MessagesPage from '../../pages/messages/MessagesPage'
+import { Link } from 'react-router-dom';
+
 
 interface User {
-  createdAt: string,
-  userName: string,
-  userAvatar: string,
-  userInfo: string,
-  userCost: number,
-  id: string
+  createdAt: string;
+  userName: string;
+  userAvatar: string;
+  userInfo: string;
+  userCost: number;
+  id: string;
 }
 
 const UserData: React.FC = () => {
@@ -37,52 +43,78 @@ const UserData: React.FC = () => {
     <>
       <div>
         <Title>Рекомендуем </Title>
+        <div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 30 }}>
+            {users.map((user) => (
+              <div key={user.id}>
+                <UserDataRender user={user} />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-      <div className='usersMessage'>
-        <div className="chat">
-          <div className="chatContact">
-            <div className="chatBtns">
-              <button>Выбрать</button>
-              <button>Архивировать</button>
-              <button>Удалить</button>
+
+
+    </>
+  );
+};
+interface UserCardProps {
+  user: User;
+}
+
+const UserDataRender: React.FC<UserCardProps> = ({ user }) => {
+  return (
+    <>
+      <div className="recomUsers">
+        <div style={{
+          backgroundImage: `url(${user.userAvatar})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          width: 241,
+          height: 263,
+          borderRadius: 15,
+        }}>
+        </div>
+        <h4>{user.userName}</h4>
+        <p>{user.userInfo}</p>
+        <div className="contact">
+          <div className="socialLinks">
+            <div className="socialSvgs">
+              <div className="images">
+                <div style={{ backgroundColor: "#1DA1F2", width: 35, height: 34, borderRadius: 10, display:'flex', justifyContent:'center', alignItems:'center'}}>
+              <img style={{ backgroundColor:"#1DA1F2"}} src={Vector} alt="" />
+                </div>
+                <div style={{ backgroundColor: "#E4405F", width: 35, height: 34, borderRadius: 10, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <img style={{ backgroundColor: "#E4405F" }} src={Vector1} alt="" />
+                </div>
+                <div style={{ backgroundColor: "#4C75A3", width: 35, height: 34, borderRadius: 10, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <img style={{ backgroundColor: "#4C75A3" }} src={Vector2} alt="" />
+                </div>
+              </div>
             </div>
-            <div>
-              {users.map(user => (
-                <MessagesPage key={user.id} user={user} />
-              ))}
-            </div>
+            <div className="emptyDiv"></div>
+            <p>  RUSSIA</p>
+      </div>
+      <div className="followers">
+            <h2>169к</h2>
+            <p>подписчиков</p>
+      </div>
+          <div className="followers">
+            <h2>4.3</h2>
+            <p>рейтинг</p>
           </div>
-          <div className="chatMessage">
-            messages
+          <div className="followers">
+            <h2>3ч.</h2>
+            <p>время ответа</p>
           </div>
+          <Link to="/src/pages/messages/MessagesPage.tsx">
+            <button className="contactBtn">Связаться</button>
+          </Link>
         </div>
       </div>
     </>
   );
 };
 
-interface UserCardProps {
-  user: User;
-}
-
-const MessagesPage: React.FC<UserCardProps> = ({ user }) => {
-  return (
-    <div className="messageHeader">
-      <div style={{
-        backgroundImage: `url(${user.userAvatar})`,
-        height: 81,
-        width: 71,
-        borderRadius: 15,
-        backgroundPosition: 'center center',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat'
-      }}>
-      </div>
-      <div className="userInfo">
-        <h4>{user.userName}</h4>
-      </div>
-    </div>
-  );
-};
 
 export default UserData;

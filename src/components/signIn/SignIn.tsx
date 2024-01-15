@@ -60,9 +60,9 @@ const SignIn: React.FC = () => {
             <h2 className="formText">Авторизация</h2>
             <p>Выберите код страны и введите номер телефона</p>
             <form>
-              <div style={{display:'flex'}} className="phoneCode">
+              <div style={{display:'flex', justifyContent:'space-between'}} className="phoneCode">
               <label className="input-phone-code">
-                <AntSelect />
+                <AntSelect/>
               </label>
               <label className="input-phone">
                 <InputField

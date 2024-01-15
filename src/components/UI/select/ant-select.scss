@@ -1,12 +1,19 @@
 .ant-select-custom {
   .ant-select-selector {
-    background-color: #8C8CB6;
+    background: #F2F2FE;
     border-radius: 20px;
+    border-color: transparent !important;
+    span {
+      background: #F2F2FE;
+      width: 160px;
+      margin-right: 10px;
+      border-radius: 20px;
+    }
 
   }
   .ant-select {
     height: 68px;
-    max-width: 170px !important;
     background-color: #8C8CB6;
+
   }
 }

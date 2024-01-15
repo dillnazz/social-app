@@ -1,6 +1,5 @@
 import Category from "../../components/category/Category"
-import UserData from "../messages/MessagesPage"
-
+import UserData from "../../components/userData/UserData"
 
 const HomePage: React.FC = () => {
   return (

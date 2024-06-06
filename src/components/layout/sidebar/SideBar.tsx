@@ -1,15 +1,19 @@
 import { Link } from "react-router-dom"
-import LogoIcon from "../../../assets/svg/Logo.svg?react"
+import LogoIcon from "../../../assets/svg/ptichka.svg?react"
 import { sidebarMenu } from "../../../utils/constants"
 import { IMenuType } from "./interface"
-import "./sidebar.scss"
+import "./sidebar.scss";
+// import Autorization from "../../../pages/autorization/Autorization";
 
 const SideBar: React.FC = () => {
   return (
     <div className="sidebar">
       <div className="app-logo">
         <Link to="/home">
+          <div>
           <LogoIcon />
+            <h1 style={{ color:"#503EA9"}}>KGApp</h1>
+          </div>
         </Link>
       </div>
       <div className="menu">
@@ -20,6 +24,7 @@ const SideBar: React.FC = () => {
                 <menu.icon />
                 {menu.title}
               </Link>
+
             </div>
           )
         })}

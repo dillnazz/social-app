@@ -24,4 +24,9 @@ export const sidebarMenu: IMenuType[] = [
 		icon: SettingIcon,
 		path: "/setting",
 	},
+	{
+		title: "AdminPanel",
+		icon: "le",
+		path: "/admin",
+	},
 ];

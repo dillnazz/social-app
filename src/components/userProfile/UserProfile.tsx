@@ -1,24 +1,21 @@
-
+import React from 'react';
 import './userProfile.scss';
-import ProfilePhoto from "../../assets/svg/Photo.svg";
 
-const UserProfile = () => {
+interface UserProfileProps {
+  profilePhoto: string;
+  profileName: string;
+}
+
+const UserProfile: React.FC<UserProfileProps> = ({ profilePhoto, profileName }) => {
   return (
     <div className='userProfile'>
       <div className="profile">
-        <img src={ProfilePhoto} alt="" />
-      </div>
-      <div className="profileCircle">
-        <div className="circle">
-        </div>
-      </div>
-      <div className='profileName'>
-        <h4>Dilnaz Niazovna</h4>
+        <img style={{ width: "40px", height: "40px" }} src={profilePhoto} alt="" />
       </div>
       <div className="empty">
       </div>
     </div>
-  )
+  );
 }
 
-export default UserProfile
+export default UserProfile;

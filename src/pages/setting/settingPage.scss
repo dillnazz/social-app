@@ -1,0 +1,43 @@
+.profileForm {
+	background-color: #f2f2fe;
+	margin-left: 100px;
+	color: #4e3f6f;
+	.userInfo {
+		width: 410px;
+		height: 900px;
+		background-color: #ffffff;
+		border-radius: 20px;
+		padding: 10px;
+		input {
+			width: 380px;
+			height: 56px;
+			border-radius: 20px;
+			background-color: #f2f2fe;
+			padding: 13px;
+			border: transparent;
+			margin: 10px;
+		}
+		textarea {
+			width: 380px;
+			height: 56px;
+			border-radius: 20px;
+			background-color: #f2f2fe;
+			padding: 13px;
+			border: transparent;
+			margin: 10px;
+		}
+		button {
+			width: 172px;
+			height: 58px;
+			color: #ffffff;
+			background-color: #615dfa;
+			border: transparent;
+			margin: 10px;
+			border-radius: 20px;
+		}
+	}
+	h2 {
+		color: #4e3f6f;
+		margin-top: 15px;
+	}
+}

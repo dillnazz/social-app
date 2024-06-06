@@ -1,5 +1,11 @@
 .category {
 	background-color: #f2f2fe;
+  .userImg {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+
+  }
 	.cards {
 		display: flex;
 		flex-wrap: wrap;
@@ -14,10 +20,56 @@
 		border-radius: 20px;
 		background-color: white;
 		padding: 15px;
+    .user-card {
+      h3 {
+        margin-left: 20px;
+        color: #4e3f6f;
+      }
+    }
+
 	}
-	.categoryImg {
-		border-radius: 20px;
-		width: 119px;
-		height: 84px;
-	}
+  .user-list {
+    margin: 30px;
+  }
+	// .categoryImg {
+	// 	border-radius: 20px;
+	// 	width: 119px;
+	// 	height: 84px;
+  //   // margin-right: 20px;
+	// }
+  .user-list {
+    h2 {
+      color: #4e3f6f;
+    }
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      // margin: 30px;
+      li{
+        padding: 20px;
+        width: 271px;
+      height: 350px;
+      border-radius: 20px;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+      margin-left: 20px;
+      margin-bottom: 30px;
+      margin-top: 30px;
+      p {
+        color: #4e3f6f;
+      }
+
+      }
+      .contactBtn {
+        border-radius: 15px;
+        background-color: rgb(80, 62, 169);
+        margin-right: 75px;
+       a {
+        color: white;
+       }
+      }
+    }
+  }
 }

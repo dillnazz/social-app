@@ -1,18 +1,19 @@
+import React from 'react';
+import { useProfilePhoto } from '../../components/profileContext/ProfilePhotoContext';
 import SignIn from "../../components/signIn/SignIn";
 import Input from "../UI/input/Input";
-import UserProfile from "../userProfile/UserProfile";
 import "./appHeader.scss";
 
-const AppHeader = () => {
+const AppHeader: React.FC = () => {
+  const { profilePhoto } = useProfilePhoto();
+
   return (
     <div className="header">
       <Input />
-      <div className="userAction">
-        <UserProfile />
-        <SignIn />
-      </div>
+      <img className='profileImg' src={profilePhoto} alt="" style={{ width: "40px", height: "40px", borderRadius: "50%" }} />
+      <SignIn />
     </div>
-  )
+  );
 }
 
-export default AppHeader
+export default AppHeader;

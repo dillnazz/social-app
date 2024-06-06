@@ -12,6 +12,9 @@
 			display: block;
 		}
 	}
+  h3 {
+    color: #4e3f6f;
+  }
 	h4 {
 		display: flex;
 		width: 210px;
@@ -34,6 +37,7 @@
 	}
 	.contact {
 		display: none;
+    color: white;
 		.socialLinks {
 			display: flex;
 			gap: 18px;

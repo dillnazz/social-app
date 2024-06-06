@@ -30,13 +30,16 @@
 		border-radius: 50px;
 		background: #fff;
 		margin-top: 13px;
+    height: 720px;
 		.inputToSentMessages {
-      display: flex;
-			height: 69vh;
 			display: flex;
 			align-items: end;
 			margin-left: 35px;
+      position: fixed;
+      top: 720px;
 			#messageSender {
+				padding: 20px;
+				padding-right: 50px;
 				width: 638px;
 				height: 66px;
 				flex-shrink: 0;
@@ -44,32 +47,30 @@
 				background: var(--Light-Bg, #f2f2fe);
 				border-color: transparent;
 			}
-      .sendOutLined {
-        color: #8C8CB6;
-
-      }
+			.sendOutLined {
+				color: #8c8cb6;
+			}
 			.linkOutLinedIcon {
 				align-items: center;
 				height: 70px;
 				display: flex;
-        color: #8c8cb6;
-        svg {
-          width: 30px;
-          height: 30px;
-          padding-right: 5px;
-        }
-
+				color: #8c8cb6;
+				svg {
+					width: 30px;
+					height: 30px;
+					padding-right: 5px;
+				}
 			}
-      .inputStyle {
-        display: flex;
-        .sendOutLined {
-          svg {
-            width: 30px;
-            height: 30px;
-            padding-left: 5px;
-          }
-        }
-      }
+			.inputStyle {
+				display: flex;
+				.sendOutLined {
+					svg {
+						width: 30px;
+						height: 30px;
+						padding-left: 5px;
+					}
+				}
+			}
 		}
 		.messagesWindow {
 			display: flex;
@@ -78,6 +79,8 @@
 			margin-right: 67px;
 			margin-top: 5px;
 			.messagesSent {
+        // display: flex;
+        // justify-content: space-around;
 				height: 100%;
 				border-radius: 20px 20px 0px 20px;
 				background: #615dfa;
@@ -85,6 +88,7 @@
 				padding: 8px;
 				margin-bottom: 10px;
 				max-width: 364px;
+        overflow-y: auto;
 			}
 		}
 	}
@@ -93,6 +97,7 @@
 		display: flex;
 		justify-content: space-between;
 		margin-right: 60px;
+
 		img {
 			width: 76px;
 			height: 76px;
@@ -100,7 +105,7 @@
 		}
 		.chatUser {
 			display: flex;
-      position: static;
+			position: static;
 			.online {
 				margin-left: 30px;
 				p:first-child {
@@ -119,7 +124,7 @@
 					font-weight: 600;
 					width: 113px;
 					height: 12px;
-          margin-top: 12px;
+					margin-top: 12px;
 				}
 			}
 		}

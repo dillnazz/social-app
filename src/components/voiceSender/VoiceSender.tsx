@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import VoiceRenring from "../../assets/svg/voice-57.png";
-import Voice from "../../assets/svg/kisspng-computer-icons-clip-art-5ae1fac6412a67.4024205715247592382669.jpg";
-import "./voiceSender.scss"
+import "./voiceSender.scss";
+import { MdOutlineSettingsVoice } from "react-icons/md";
+import { MdOutlineKeyboardVoice } from "react-icons/md";
 
 interface VoiceSenderProps {
   onVoiceSent: (voiceData: Blob) => void;
@@ -10,9 +10,9 @@ interface VoiceSenderProps {
 
 const VoiceSender: React.FC<VoiceSenderProps> = ({ onVoiceSent, className }) => {
   const [audioStream, setAudioStream] = useState<MediaStream | null>(null);
-  const [recording, setRecording] = useState<boolean>(false);
+  const [mediaRecorder, setMediaRecorder] = useState<MediaRecorder | null>(null);
   const [audioChunks, setAudioChunks] = useState<Blob[]>([]);
-  const [startRecordingVisible, setStartRecordingVisible] = useState<boolean>(true);
+  const [recording, setRecording] = useState<boolean>(false);
 
   useEffect(() => {
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
@@ -26,47 +26,47 @@ const VoiceSender: React.FC<VoiceSenderProps> = ({ onVoiceSent, className }) => 
     }
   }, []);
 
-  const toggleImages = () => {
-    setStartRecordingVisible(!startRecordingVisible);
-    setRecording(!recording);
-    setAudioChunks([]);
-
+  useEffect(() => {
     if (audioStream) {
-      const mediaRecorder = new MediaRecorder(audioStream);
-      mediaRecorder.ondataavailable = (event) => {
+      const recorder = new MediaRecorder(audioStream);
+      recorder.ondataavailable = (event) => {
         if (event.data.size > 0) {
           setAudioChunks((prevChunks) => [...prevChunks, event.data]);
         }
       };
-      mediaRecorder.onstop = () => {
+      recorder.onstop = () => {
         const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
         onVoiceSent(audioBlob);
+        setAudioChunks([]);
       };
+      setMediaRecorder(recorder);
+    }
+  }, [audioStream, onVoiceSent, audioChunks]);
 
-      mediaRecorder.start();
-      setTimeout(() => {
+  const toggleRecording = () => {
+    if (mediaRecorder) {
+      if (!recording) {
+        mediaRecorder.start();
+      } else {
         mediaRecorder.stop();
-      }, 5000);
+      }
+      setRecording(!recording);
     }
   };
 
   return (
     <div>
-      {startRecordingVisible ? (
-        <img
-        className='voiceStop'
-          src={VoiceRenring}
-          alt="Start Recording"
-          onClick={toggleImages}
-          style={{ cursor: 'pointer', width: 40, height: 40, borderRadius:20}}
+      {!recording ? (
+        <MdOutlineKeyboardVoice
+          className='voiceButton'
+          onClick={toggleRecording}
+          style={{ cursor: 'pointer', width: 35, height: 35, marginTop: "12px" }}
         />
       ) : (
-        <img
-          className='voiceStop'
-          src={Voice}
-          alt="Stop Recording"
-          onClick={toggleImages}
-          style={{ cursor: 'pointer', width: 30, height: 30}}
+        <MdOutlineSettingsVoice
+          className='voiceButton'
+          onClick={toggleRecording}
+          style={{ cursor: 'pointer', width: 35, height: 35, marginTop: "12px" }}
         />
       )}
     </div>

@@ -15,7 +15,7 @@ export const mockUserData = [
 		image: Actor,
 	},
 	{
-		category: "YouTubers",
+		category: "Учителя",
 		image: YouTuber,
 	},
 	{
